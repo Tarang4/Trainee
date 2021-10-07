@@ -1,0 +1,612 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:spotify/Wigets/drawerDemo.dart';
+
+import '../login_screen.dart';
+
+class DialogButton extends StatefulWidget {
+  const DialogButton({Key? key}) : super(key: key);
+
+  @override
+  _DialogButtonState createState() => _DialogButtonState();
+}
+
+class _DialogButtonState extends State<DialogButton> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(38.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    child: TextButton(
+                      onPressed: () => openDialog(),
+                      child: Text(
+                        'on tap',
+                        style: TextStyle(fontSize: 20, color: Colors.black),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    height: 50,
+                    width: 2,
+                    color: Colors.black.withOpacity(0.5),
+                  ),
+                  TextButton(
+                    onPressed: () => customDialog(),
+                    child: Text(
+                      'custom dialog',
+                      style: TextStyle(fontSize: 20, color: Colors.black),
+                    ),
+                  ),
+                ],
+              ),
+              Container(
+                height: 2,
+                width: double.infinity,
+                color: Colors.black.withOpacity(0.7),
+              ),
+              TextButton(
+                  onPressed: () => dowonLoad(),
+                  child: Text(
+                    'download',
+                    style: TextStyle(fontSize: 20, color: Colors.black),
+                  )),
+              Container(
+                height: 2,
+                width: double.infinity,
+                color: Colors.black.withOpacity(0.7),
+              ),
+              TextButton(
+                  onPressed: () => docuMent(),
+                  child: Text(
+                    'Document',
+                    style: TextStyle(fontSize: 20, color: Colors.black),
+                  )),
+              Container(
+                height: 2,
+                width: double.infinity,
+                color: Colors.black.withOpacity(0.7),
+              ),
+              TextButton(
+                  onPressed: () => dowonLoadScroll(),
+                  child: Text(
+                    'download scroll',
+                    style: TextStyle(fontSize: 20, color: Colors.black),
+                  )),
+              Container(
+                height: 2,
+                width: double.infinity,
+                color: Colors.black.withOpacity(0.7),
+              ),
+              SizedBox(
+                height: 40,
+              ),
+              Text(
+                'Drawer Demo widget',
+                style: TextStyle(fontSize: 16, color: Colors.black),
+              ),
+              Column(
+                children: [
+                  TextButton(
+                      onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => DrawerDemo())),
+                      child: Text(
+                        'Drawer Demo',
+                        style: TextStyle(fontSize: 26, color: Colors.black),
+                      )),
+                  Container(
+                    height: 2,
+                    width: double.infinity,
+                    color: Colors.black.withOpacity(0.7),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  openDialog() {
+    return showDialog(
+      context: context,
+      builder: (buildContext) {
+        return AlertDialog(
+          title: Text('hello'),
+          backgroundColor: Colors.amber,
+          content: SingleChildScrollView(
+            child: Text(
+                'gafgsfg gfsguyfuirgru t husurthg ufhurtgrheug  ptgruhgf ghru'),
+          ),
+          actions: [
+            TextButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: Text('close'))
+          ],
+        );
+      },
+    );
+  }
+
+  customDialog() {
+    return showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (context) {
+          return Dialog(
+            clipBehavior: Clip.antiAlias,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20.0)), //this right here
+            child: Container(
+              height: 260,
+              color: Colors.black,
+              child: Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Image.asset(
+                      "asset/image/spotify-logo-png-7053.png",
+                      width: 95,
+                      height: 95,
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      ' Parent = android.view.ViewRootImpl@69a1612, this = DecorView@64111e3[MainActivity]',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    Row(
+                      children: [
+                        TextButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child: Text(
+                              'close',
+                              style: TextStyle(color: Colors.amber),
+                            )),
+                        TextButton(
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => HomeScreen()));
+                            },
+                            child: Text(
+                              'Next',
+                              style: TextStyle(color: Colors.amber),
+                            )),
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            ),
+          );
+        });
+  }
+
+  dowonLoad() {
+    return showModalBottomSheet(
+        context: context,
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(25), topRight: Radius.circular(25))),
+        builder: (context) {
+          return Container(
+              height: 280,
+              child: Padding(
+                padding: const EdgeInsets.only(
+                    top: 10.0, left: 20, right: 20, bottom: 20),
+                child: SingleChildScrollView(
+                  clipBehavior: Clip.antiAlias,
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 2.5,
+                        width: 35,
+                        color: Colors.black.withOpacity(0.7),
+                      ),
+                      SizedBox(
+                        height: 25,
+                      ),
+                      Text(
+                        'Download',
+                        style: TextStyle(
+                          fontSize: 24,
+                          wordSpacing: 1,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 40.0),
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                          child: Container(
+                            clipBehavior: Clip.antiAlias,
+                            height: 48.5,
+                            alignment: Alignment.center,
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                                border:
+                                    Border.all(width: 1, color: Colors.black),
+                                borderRadius: BorderRadius.circular(20)),
+                            child: Text(
+                              'This photo',
+                              style: TextStyle(
+                                  fontSize: 18, fontWeight: FontWeight.w500),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(top: 20),
+                        height: 48.5,
+                        alignment: Alignment.center,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                            border: Border.all(width: 1, color: Colors.black),
+                            borderRadius: BorderRadius.circular(20)),
+                        child: Text(
+                          'This photo',
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.w500),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ));
+        });
+  }
+
+  dowonLoadScroll() {
+    return showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      isDismissible: true,
+      shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(top: Radius.circular(16))),
+      builder: (context) => DraggableScrollableSheet(
+          initialChildSize: 0.5,
+          minChildSize: 0.2,
+          maxChildSize: 0.8,
+          expand: false,
+          builder: (_, controller) => SingleChildScrollView(
+            controller:controller ,
+                child: Container(
+                    clipBehavior: Clip.antiAlias,
+                    decoration: BoxDecoration(),
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                          top: 10.0, left: 20, right: 20, bottom: 20),
+                      child: Column(
+                        children: [
+                          Container(
+                            height: 2.5,
+                            width: 35,
+                            color: Colors.black.withOpacity(0.7),
+                          ),
+                          SizedBox(
+                            height: 25,
+                          ),
+                          Text(
+                            'documents',
+                            style: TextStyle(
+                              fontSize: 24,
+                              wordSpacing: 1,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 38.0),
+                            child: Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    Icon(
+                                      Icons.picture_as_pdf,
+                                      size: 34,
+                                    ),
+                                    SizedBox(
+                                      width: 15,
+                                    ),
+                                    Text(
+                                      'Handover List.pdf',
+                                      style: TextStyle(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w500,
+                                          wordSpacing: 1),
+                                    )
+                                  ],
+                                ),
+                                Container(
+                                  height: 1.5,
+                                  margin: EdgeInsets.only(top: 13),
+                                  width: double.infinity,
+                                  color: Colors.black.withOpacity(0.3),
+                                )
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 15.0),
+                            child: Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    Icon(
+                                      Icons.picture_as_pdf,
+                                      size: 34,
+                                    ),
+                                    SizedBox(
+                                      width: 15,
+                                    ),
+                                    Text(
+                                      'Handover List.pdf',
+                                      style: TextStyle(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w500,
+                                          wordSpacing: 1),
+                                    )
+                                  ],
+                                ),
+                                Container(
+                                  height: 1.5,
+                                  margin: EdgeInsets.only(top: 13),
+                                  width: double.infinity,
+                                  color: Colors.black.withOpacity(0.3),
+                                )
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 15.0),
+                            child: Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    Icon(
+                                      Icons.picture_as_pdf,
+                                      size: 34,
+                                    ),
+                                    SizedBox(
+                                      width: 15,
+                                    ),
+                                    Text(
+                                      'Handover List.pdf',
+                                      style: TextStyle(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w500,
+                                          wordSpacing: 1),
+                                    )
+                                  ],
+                                ),
+                                Container(
+                                  height: 1.5,
+                                  margin: EdgeInsets.only(top: 13),
+                                  width: double.infinity,
+                                  color: Colors.black.withOpacity(0.3),
+                                )
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 15.0),
+                            child: Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    Icon(
+                                      Icons.picture_as_pdf,
+                                      size: 34,
+                                    ),
+                                    SizedBox(
+                                      width: 15,
+                                    ),
+                                    Text(
+                                      'Handover List.pdf',
+                                      style: TextStyle(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w500,
+                                          wordSpacing: 1),
+                                    )
+                                  ],
+                                ),
+                                Container(
+                                  height: 1.5,
+                                  margin: EdgeInsets.only(top: 13),
+                                  width: double.infinity,
+                                  color: Colors.black.withOpacity(0.3),
+                                )
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    )),
+              )),
+    );
+  }
+
+  docuMent() {
+    return showModalBottomSheet(
+        context: context,
+        isScrollControlled: true,
+        isDismissible: true,
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(25), topRight: Radius.circular(25))),
+        builder: (context) {
+          return Container(
+              height: 400,
+              clipBehavior: Clip.antiAlias,
+              decoration: BoxDecoration(),
+              child: Padding(
+                padding: const EdgeInsets.only(
+                    top: 10.0, left: 20, right: 20, bottom: 20),
+                child: Column(
+                  children: [
+                    Container(
+                      height: 2.5,
+                      width: 35,
+                      color: Colors.black.withOpacity(0.7),
+                    ),
+                    SizedBox(
+                      height: 25,
+                    ),
+                    Text(
+                      'documents',
+                      style: TextStyle(
+                        fontSize: 24,
+                        wordSpacing: 1,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 38.0),
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.picture_as_pdf,
+                                size: 34,
+                              ),
+                              SizedBox(
+                                width: 15,
+                              ),
+                              Text(
+                                'Handover List.pdf',
+                                style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w500,
+                                    wordSpacing: 1),
+                              )
+                            ],
+                          ),
+                          Container(
+                            height: 1.5,
+                            margin: EdgeInsets.only(top: 13),
+                            width: double.infinity,
+                            color: Colors.black.withOpacity(0.3),
+                          )
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 15.0),
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.picture_as_pdf,
+                                size: 34,
+                              ),
+                              SizedBox(
+                                width: 15,
+                              ),
+                              Text(
+                                'Handover List.pdf',
+                                style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w500,
+                                    wordSpacing: 1),
+                              )
+                            ],
+                          ),
+                          Container(
+                            height: 1.5,
+                            margin: EdgeInsets.only(top: 13),
+                            width: double.infinity,
+                            color: Colors.black.withOpacity(0.3),
+                          )
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 15.0),
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.picture_as_pdf,
+                                size: 34,
+                              ),
+                              SizedBox(
+                                width: 15,
+                              ),
+                              Text(
+                                'Handover List.pdf',
+                                style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w500,
+                                    wordSpacing: 1),
+                              )
+                            ],
+                          ),
+                          Container(
+                            height: 1.5,
+                            margin: EdgeInsets.only(top: 13),
+                            width: double.infinity,
+                            color: Colors.black.withOpacity(0.3),
+                          )
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 15.0),
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.picture_as_pdf,
+                                size: 34,
+                              ),
+                              SizedBox(
+                                width: 15,
+                              ),
+                              Text(
+                                'Handover List.pdf',
+                                style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w500,
+                                    wordSpacing: 1),
+                              )
+                            ],
+                          ),
+                          Container(
+                            height: 1.5,
+                            margin: EdgeInsets.only(top: 13),
+                            width: double.infinity,
+                            color: Colors.black.withOpacity(0.3),
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ));
+        });
+  }
+}
