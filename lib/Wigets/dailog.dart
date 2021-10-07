@@ -119,14 +119,14 @@ class _DialogButtonState extends State<DialogButton> {
 
   openDialog() {
     return showDialog(
-      context: context,
+      context: context, barrierDismissible: false,
       builder: (buildContext) {
-        return AlertDialog(
+        return AlertDialog( elevation: 10.8,
           title: Text('hello'),
           backgroundColor: Colors.amber,
           content: SingleChildScrollView(
             child: Text(
-                'gafgsfg gfsguyfuirgru t husurthg ufhurtgrheug  ptgruhgf ghru'),
+                ' backgroundColor: Colors.amber, content: SingleChildScrollView tttttttttttttttttttth'),
           ),
           actions: [
             TextButton(
@@ -145,13 +145,25 @@ class _DialogButtonState extends State<DialogButton> {
         context: context,
         barrierDismissible: false,
         builder: (context) {
-          return Dialog(
+          return Dialog(elevation: 9.0,
             clipBehavior: Clip.antiAlias,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20.0)), //this right here
             child: Container(
               height: 260,
-              color: Colors.black,
+
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                    colors: [
+                      Colors.white,
+                      Colors.black
+                    ],
+                    begin: const FractionalOffset(0.0, 0.0),
+                    end: const FractionalOffset(0.5, 0.7),
+                    stops: [0.1, 0.9],
+                    tileMode: TileMode.clamp),
+              ),
+
               child: Padding(
                 padding: const EdgeInsets.all(12.0),
                 child: Column(
