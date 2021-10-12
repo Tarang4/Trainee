@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:spotify/Stack%20widget/stack_1.dart';
 import 'package:spotify/Wigets/drawerDemo.dart';
 
 import '../login_screen.dart';
+import 'list_view_demo.dart';
 
 class DialogButton extends StatefulWidget {
   const DialogButton({Key? key}) : super(key: key);
@@ -89,7 +91,7 @@ class _DialogButtonState extends State<DialogButton> {
                 height: 40,
               ),
               Text(
-                'Drawer Demo widget',
+                'Stack widget Demo ',
                 style: TextStyle(fontSize: 16, color: Colors.black),
               ),
               Column(
@@ -100,7 +102,7 @@ class _DialogButtonState extends State<DialogButton> {
                           MaterialPageRoute(
                               builder: (context) => DrawerDemo())),
                       child: Text(
-                        'Drawer Demo',
+                        'stack Demo1',
                         style: TextStyle(fontSize: 26, color: Colors.black),
                       )),
                   Container(
@@ -108,8 +110,49 @@ class _DialogButtonState extends State<DialogButton> {
                     width: double.infinity,
                     color: Colors.black.withOpacity(0.7),
                   ),
+                  TextButton(
+                      onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => StackDemo())),
+                      child: Text(
+                        'stack Demo1',
+                        style: TextStyle(fontSize: 26, color: Colors.black),
+                      )),
+
                 ],
               ),
+              Container(
+                height: 2,
+                width: double.infinity,
+                color: Colors.black.withOpacity(0.7),
+              ),
+              SizedBox(
+                height: 40,
+              ),
+              Text(
+                'List view widget Demo ',
+                style: TextStyle(fontSize: 16, color: Colors.black),
+              ),
+              Container(
+                height: 2,
+                width: double.infinity,
+                color: Colors.black.withOpacity(0.7),
+              ),
+
+              Column(
+                children: [
+                  TextButton(
+                      onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ListViewItem())),
+                      child: Text(
+                        'list view  Demo1',
+                        style: TextStyle(fontSize: 26, color: Colors.black),
+                      )),
+                ],
+              )
             ],
           ),
         ),
