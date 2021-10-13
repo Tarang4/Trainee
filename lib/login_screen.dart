@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:spotify/sign_google.dart';
-import 'package:spotify/sign_mobile.dart';
-import 'package:spotify/sign_up_page.dart';
+import 'package:spotify/Wigets/Spotify/sign_mobile.dart';
+import 'package:spotify/Wigets/Spotify/sign_up_page.dart';
 
 
 
-import 'Wigets/dailog.dart';
-import 'log_in_page.dart';
+
+import 'widgets_prectic.dart';
+import 'Wigets/Spotify/log_in_page.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -160,7 +160,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 InkWell( onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>SignGoogle()));
 
                 },
                   child: Container(
