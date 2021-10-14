@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:spotify/Model/listview_disign_model.dart';
 
@@ -12,6 +10,71 @@ class ListViewDesign extends StatefulWidget {
 
 class _ListViewDesignState extends State<ListViewDesign> {
   List<ListDesignModel> listName = [
+    ListDesignModel(
+      name: "Spotify",
+      imageUrl: "asset/image/spotifyWite-logo-png-7057.png",
+      color: Colors.deepOrangeAccent,
+      pers: "92%",
+      sname: "Exilent",
+      // icons: Icons.photo_size_select_actual_outlined
+    ),
+    // ListDesignModel(
+    //     name: "Google",
+    //     imageUrl: "asset/image/google.png",
+    //     color: Colors.green,
+    //     pers: "98%",
+    //     sname: "Good"),
+    // ListDesignModel(
+    //     name: "Instagram",
+    //     imageUrl: "asset/image/instgram.png",
+    //     color: Colors.blueAccent,
+    //     pers: "99%",
+    //     sname: "Amezing"),
+    // ListDesignModel(
+    //     name: "Facebook",
+    //     imageUrl: "asset/image/facebook1.png",
+    //     color: Colors.pinkAccent,
+    //     pers: "95%",
+    //     sname: "Exilent"),
+    // ListDesignModel(
+    //     name: "Spotify-1",
+    //     imageUrl: "asset/image/spotify-128.png",
+    //     color: Colors.amberAccent,
+    //     pers: "89%",
+    //     sname: "Good"),
+    // ListDesignModel(
+    //     name: "Spotify",
+    //     imageUrl: "asset/image/spotifyWite-logo-png-7057.png",
+    //     color: Colors.black,
+    //     pers: "92%",
+    //     sname: "Exilent"),
+    // ListDesignModel(
+    //     name: "Google",
+    //     imageUrl: "asset/image/google.png",
+    //     color: Colors.pink,
+    //     pers: "98%",
+    //     sname: "Good"),
+    // ListDesignModel(
+    //     name: "Instagram",
+    //     imageUrl: "asset/image/instgram.png",
+    //     color: Colors.brown,
+    //     pers: "99%",
+    //     sname: "Amezing"),
+    // ListDesignModel(
+    //     name: "Facebook",
+    //     imageUrl: "asset/image/facebook1.png",
+    //     color: Colors.lightGreen,
+    //     pers: "95%",
+    //     sname: "Exilent"),
+    // ListDesignModel(
+    //     name: "Spotify-1",
+    //     imageUrl: "asset/image/spotify-128.png",
+    //     color: Colors.deepPurpleAccent,
+    //     pers: "89%",
+    //     sname: "Good"),
+  ];
+
+  List<ListDesignModel> listName2 = [
     ListDesignModel(
       name: "Spotify",
       imageUrl: "asset/image/spotifyWite-logo-png-7057.png",
@@ -94,9 +157,16 @@ class _ListViewDesignState extends State<ListViewDesign> {
                       style:
                           TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
                     ),
-                    Icon(
-                      Icons.settings,
-                      size: 30,
+                    InkWell(
+                      onTap: () {
+                        setState(() {
+                         listName.addAll(listName2);
+                        });
+                      },
+                      child: Icon(
+                        Icons.settings,
+                        size: 30,
+                      ),
                     )
                   ],
                 ),
@@ -115,6 +185,11 @@ class _ListViewDesignState extends State<ListViewDesign> {
                       color: listmodel.color,
                       sname: listmodel.sname,
                       pers: listmodel.pers,
+                      onTap: (){
+                        setState(() {
+                          listName.removeAt(index);
+                        });
+                    },
                     );
                   },
                 ),
@@ -130,9 +205,19 @@ class _ListViewDesignState extends State<ListViewDesign> {
 class LisviewContainer extends StatelessWidget {
   final String? name, imageUrl, pers, sname;
   final Color? color;
+  final Icons? icons;
+  final GestureTapCallback? onTap;
+
 
   const LisviewContainer(
-      {Key? key, this.name, this.imageUrl, this.sname, this.pers, this.color})
+      {Key? key,
+      this.name,
+      this.imageUrl,
+      this.sname,
+      this.pers,
+      this.color,
+      this.icons,
+        this.onTap,})
       : super(key: key);
 
   @override
@@ -148,42 +233,59 @@ class LisviewContainer extends StatelessWidget {
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Image.asset(
-            imageUrl ?? "",
-            height: 60,
-            width: 60,
+          Column(
+            children: [
+              Image.asset(
+                imageUrl ?? "",
+                height: 30,
+                width: 30,
+              ),
+            ],
           ),
-          SizedBox(height: 7,),
+          SizedBox(
+            height: 7,
+          ),
 
           Text(
             name ?? "",
             style: TextStyle(
                 color: Colors.black, fontSize: 24, fontWeight: FontWeight.bold),
           ),
-          SizedBox(height: 47,),
+          // SizedBox(height: 47,),
 
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          Column(
             children: [
-              Icon(Icons.arrow_forward_ios,size: 30,),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    pers ?? "",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 22,
-                        fontWeight: FontWeight.bold),
+                  InkWell(
+                    onTap: onTap,
+                    child: Icon(
+                      Icons.arrow_forward_ios,
+                      size: 30,
+                    ),
                   ),
-                  Text(
-                    sname ?? "",
-                    style: TextStyle(
-                        color: Colors.black.withOpacity(0.7),
-                        fontWeight: FontWeight.normal,
-                        fontSize: 14),
-                  )
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text(
+                        pers ?? "",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 22,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        sname ?? "",
+                        style: TextStyle(
+                            color: Colors.black.withOpacity(0.7),
+                            fontWeight: FontWeight.normal,
+                            fontSize: 14),
+                      )
+                    ],
+                  ),
                 ],
               ),
             ],
