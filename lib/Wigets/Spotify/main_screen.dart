@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:spotify/utils/textstlye.dart';
 
+import 'list_main_screen.dart';
+
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
 
@@ -11,30 +13,37 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   int index = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
       bottomNavigationBar: new BottomNavigationBar(
         currentIndex: index,
-        onTap: (int index) { setState((){ this.index = index; }); },
+        backgroundColor: Colors.green.withOpacity(0.5),
+        onTap: (int index) {
+          setState(() {
+            this.index = index;
+          });
+        },
         items: <BottomNavigationBarItem>[
           new BottomNavigationBarItem(
             icon: new Icon(Icons.home),
             title: new Text("Left"),
           ),
           new BottomNavigationBarItem(
-            icon: new Icon(Icons.settings),
-            title: new Text("setting"),
-            backgroundColor: Colors.green
-          ),
+              icon: new Icon(Icons.settings),
+              title: new Text("setting"),
+              backgroundColor: Colors.green),
           new BottomNavigationBarItem(
-            icon: new Icon(Icons.search),
+            icon: IconButton(onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>ListMainScreen()));
+            }, icon: Icon(Icons.search)),
+
             title: new Text("Right"),
           ),
         ],
       ),
-
       body: Container(
         width: double.infinity,
         decoration: BoxDecoration(
@@ -300,7 +309,6 @@ class _MainScreenState extends State<MainScreen> {
                   ],
                 ),
               ),
-              
               Padding(
                 padding: const EdgeInsets.only(
                   top: 18,
@@ -317,7 +325,6 @@ class _MainScreenState extends State<MainScreen> {
               Padding(
                 padding: const EdgeInsets.only(
                   top: 16,
-
                 ),
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
@@ -334,8 +341,7 @@ class _MainScreenState extends State<MainScreen> {
                             Container(
                               width: 125,
                               height: 125,
-                              decoration: BoxDecoration(
-                              ),
+                              decoration: BoxDecoration(),
                               clipBehavior: Clip.antiAlias,
                               child: Image.asset(
                                 "asset/image/WhatsApp Image 2021-09-24 at 4.05.44 AM (1).jpeg",
@@ -345,7 +351,8 @@ class _MainScreenState extends State<MainScreen> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 8.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 8.0, bottom: 2),
                               child: Text(
                                   "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd ",
                                   style: TextStyle(
@@ -357,7 +364,8 @@ class _MainScreenState extends State<MainScreen> {
                                   overflow: TextOverflow.ellipsis),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 3.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 3.0, bottom: 2),
                               child: Text("The Mythpst podcast ",
                                   style: TextStyle(
                                     fontSize: 11,
@@ -374,7 +382,6 @@ class _MainScreenState extends State<MainScreen> {
                         width: 7,
                       ),
                       Container(
-
                         height: 180,
                         width: 125,
                         decoration: BoxDecoration(),
@@ -384,8 +391,7 @@ class _MainScreenState extends State<MainScreen> {
                             Container(
                               width: 125,
                               height: 125,
-                              decoration: BoxDecoration(
-                              ),
+                              decoration: BoxDecoration(),
                               clipBehavior: Clip.antiAlias,
                               child: Image.asset(
                                 "asset/image/WhatsApp Image 2021-09-24 at 4.05.44 AM (1).jpeg",
@@ -395,7 +401,8 @@ class _MainScreenState extends State<MainScreen> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 8.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 8.0, bottom: 2),
                               child: Text(
                                   "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd ",
                                   style: TextStyle(
@@ -407,7 +414,8 @@ class _MainScreenState extends State<MainScreen> {
                                   overflow: TextOverflow.ellipsis),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 3.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 3.0, bottom: 2),
                               child: Text("The Mythpst podcast ",
                                   style: TextStyle(
                                     fontSize: 11,
@@ -424,7 +432,6 @@ class _MainScreenState extends State<MainScreen> {
                         width: 7,
                       ),
                       Container(
-
                         height: 180,
                         width: 125,
                         decoration: BoxDecoration(),
@@ -434,8 +441,7 @@ class _MainScreenState extends State<MainScreen> {
                             Container(
                               width: 125,
                               height: 125,
-                              decoration: BoxDecoration(
-                              ),
+                              decoration: BoxDecoration(),
                               clipBehavior: Clip.antiAlias,
                               child: Image.asset(
                                 "asset/image/WhatsApp Image 2021-09-24 at 4.05.44 AM (1).jpeg",
@@ -445,7 +451,8 @@ class _MainScreenState extends State<MainScreen> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 8.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 8.0, bottom: 2),
                               child: Text(
                                   "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd ",
                                   style: TextStyle(
@@ -457,7 +464,8 @@ class _MainScreenState extends State<MainScreen> {
                                   overflow: TextOverflow.ellipsis),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 3.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 3.0, bottom: 2),
                               child: Text("The Mythpst podcast ",
                                   style: TextStyle(
                                     fontSize: 11,
@@ -474,7 +482,6 @@ class _MainScreenState extends State<MainScreen> {
                         width: 7,
                       ),
                       Container(
-
                         height: 180,
                         width: 125,
                         decoration: BoxDecoration(),
@@ -484,8 +491,7 @@ class _MainScreenState extends State<MainScreen> {
                             Container(
                               width: 125,
                               height: 125,
-                              decoration: BoxDecoration(
-                              ),
+                              decoration: BoxDecoration(),
                               clipBehavior: Clip.antiAlias,
                               child: Image.asset(
                                 "asset/image/WhatsApp Image 2021-09-24 at 4.05.44 AM (1).jpeg",
@@ -495,7 +501,8 @@ class _MainScreenState extends State<MainScreen> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 8.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 8.0, bottom: 2),
                               child: Text(
                                   "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd ",
                                   style: TextStyle(
@@ -507,7 +514,8 @@ class _MainScreenState extends State<MainScreen> {
                                   overflow: TextOverflow.ellipsis),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 3.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 3.0, bottom: 2),
                               child: Text("The Mythpst podcast ",
                                   style: TextStyle(
                                     fontSize: 11,
@@ -524,7 +532,6 @@ class _MainScreenState extends State<MainScreen> {
                         width: 7,
                       ),
                       Container(
-
                         height: 180,
                         width: 125,
                         decoration: BoxDecoration(),
@@ -534,8 +541,7 @@ class _MainScreenState extends State<MainScreen> {
                             Container(
                               width: 125,
                               height: 125,
-                              decoration: BoxDecoration(
-                              ),
+                              decoration: BoxDecoration(),
                               clipBehavior: Clip.antiAlias,
                               child: Image.asset(
                                 "asset/image/WhatsApp Image 2021-09-24 at 4.05.44 AM (1).jpeg",
@@ -545,7 +551,8 @@ class _MainScreenState extends State<MainScreen> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 8.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 8.0, bottom: 2),
                               child: Text(
                                   "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd ",
                                   style: TextStyle(
@@ -557,7 +564,8 @@ class _MainScreenState extends State<MainScreen> {
                                   overflow: TextOverflow.ellipsis),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 3.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 3.0, bottom: 2),
                               child: Text("The Mythpst podcast ",
                                   style: TextStyle(
                                     fontSize: 11,
@@ -574,7 +582,6 @@ class _MainScreenState extends State<MainScreen> {
                         width: 7,
                       ),
                       Container(
-
                         height: 180,
                         width: 125,
                         decoration: BoxDecoration(),
@@ -584,8 +591,7 @@ class _MainScreenState extends State<MainScreen> {
                             Container(
                               width: 125,
                               height: 125,
-                              decoration: BoxDecoration(
-                              ),
+                              decoration: BoxDecoration(),
                               clipBehavior: Clip.antiAlias,
                               child: Image.asset(
                                 "asset/image/WhatsApp Image 2021-09-24 at 4.05.44 AM (1).jpeg",
@@ -595,7 +601,8 @@ class _MainScreenState extends State<MainScreen> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 8.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 8.0, bottom: 2),
                               child: Text(
                                   "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd ",
                                   style: TextStyle(
@@ -607,7 +614,8 @@ class _MainScreenState extends State<MainScreen> {
                                   overflow: TextOverflow.ellipsis),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 3.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 3.0, bottom: 2),
                               child: Text("The Mythpst podcast ",
                                   style: TextStyle(
                                     fontSize: 11,
@@ -624,7 +632,6 @@ class _MainScreenState extends State<MainScreen> {
                         width: 7,
                       ),
                       Container(
-
                         height: 180,
                         width: 125,
                         decoration: BoxDecoration(),
@@ -634,8 +641,7 @@ class _MainScreenState extends State<MainScreen> {
                             Container(
                               width: 125,
                               height: 125,
-                              decoration: BoxDecoration(
-                              ),
+                              decoration: BoxDecoration(),
                               clipBehavior: Clip.antiAlias,
                               child: Image.asset(
                                 "asset/image/WhatsApp Image 2021-09-24 at 4.05.44 AM (1).jpeg",
@@ -645,7 +651,8 @@ class _MainScreenState extends State<MainScreen> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 8.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 8.0, bottom: 2),
                               child: Text(
                                   "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd ",
                                   style: TextStyle(
@@ -657,7 +664,8 @@ class _MainScreenState extends State<MainScreen> {
                                   overflow: TextOverflow.ellipsis),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 3.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 3.0, bottom: 2),
                               child: Text("The Mythpst podcast ",
                                   style: TextStyle(
                                     fontSize: 11,
@@ -674,7 +682,6 @@ class _MainScreenState extends State<MainScreen> {
                         width: 7,
                       ),
                       Container(
-
                         height: 180,
                         width: 125,
                         decoration: BoxDecoration(),
@@ -684,8 +691,7 @@ class _MainScreenState extends State<MainScreen> {
                             Container(
                               width: 125,
                               height: 125,
-                              decoration: BoxDecoration(
-                              ),
+                              decoration: BoxDecoration(),
                               clipBehavior: Clip.antiAlias,
                               child: Image.asset(
                                 "asset/image/WhatsApp Image 2021-09-24 at 4.05.44 AM (1).jpeg",
@@ -695,7 +701,8 @@ class _MainScreenState extends State<MainScreen> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 8.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 8.0, bottom: 2),
                               child: Text(
                                   "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd ",
                                   style: TextStyle(
@@ -707,7 +714,8 @@ class _MainScreenState extends State<MainScreen> {
                                   overflow: TextOverflow.ellipsis),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 3.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 3.0, bottom: 2),
                               child: Text("The Mythpst podcast ",
                                   style: TextStyle(
                                     fontSize: 11,
@@ -734,8 +742,7 @@ class _MainScreenState extends State<MainScreen> {
                             Container(
                               width: 125,
                               height: 125,
-                              decoration: BoxDecoration(
-                              ),
+                              decoration: BoxDecoration(),
                               clipBehavior: Clip.antiAlias,
                               child: Image.asset(
                                 "asset/image/WhatsApp Image 2021-09-24 at 4.05.44 AM (1).jpeg",
@@ -745,7 +752,8 @@ class _MainScreenState extends State<MainScreen> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 8.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 8.0, bottom: 2),
                               child: Text(
                                   "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd ",
                                   style: TextStyle(
@@ -757,7 +765,8 @@ class _MainScreenState extends State<MainScreen> {
                                   overflow: TextOverflow.ellipsis),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 3.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 3.0, bottom: 2),
                               child: Text("The Mythpst podcast ",
                                   style: TextStyle(
                                     fontSize: 11,
@@ -790,7 +799,6 @@ class _MainScreenState extends State<MainScreen> {
               Padding(
                 padding: const EdgeInsets.only(
                   top: 16,
-
                 ),
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
@@ -818,7 +826,8 @@ class _MainScreenState extends State<MainScreen> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 8.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 8.0, bottom: 2),
                               child: Text(
                                   "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd ",
                                   style: TextStyle(
@@ -830,7 +839,8 @@ class _MainScreenState extends State<MainScreen> {
                                   overflow: TextOverflow.ellipsis),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 3.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 3.0, bottom: 2),
                               child: Text("The Mythpst podcast ",
                                   style: TextStyle(
                                     fontSize: 11,
@@ -867,7 +877,8 @@ class _MainScreenState extends State<MainScreen> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 8.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 8.0, bottom: 2),
                               child: Text(
                                   "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd ",
                                   style: TextStyle(
@@ -879,7 +890,8 @@ class _MainScreenState extends State<MainScreen> {
                                   overflow: TextOverflow.ellipsis),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 3.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 3.0, bottom: 2),
                               child: Text("The Mythpst podcast ",
                                   style: TextStyle(
                                     fontSize: 11,
@@ -916,7 +928,8 @@ class _MainScreenState extends State<MainScreen> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 8.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 8.0, bottom: 2),
                               child: Text(
                                   "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd ",
                                   style: TextStyle(
@@ -928,7 +941,8 @@ class _MainScreenState extends State<MainScreen> {
                                   overflow: TextOverflow.ellipsis),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 3.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 3.0, bottom: 2),
                               child: Text("The Mythpst podcast ",
                                   style: TextStyle(
                                     fontSize: 11,
@@ -965,7 +979,8 @@ class _MainScreenState extends State<MainScreen> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 8.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 8.0, bottom: 2),
                               child: Text(
                                   "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd ",
                                   style: TextStyle(
@@ -977,7 +992,8 @@ class _MainScreenState extends State<MainScreen> {
                                   overflow: TextOverflow.ellipsis),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 3.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 3.0, bottom: 2),
                               child: Text("The Mythpst podcast ",
                                   style: TextStyle(
                                     fontSize: 11,
@@ -1014,7 +1030,8 @@ class _MainScreenState extends State<MainScreen> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 8.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 8.0, bottom: 2),
                               child: Text(
                                   "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd ",
                                   style: TextStyle(
@@ -1026,7 +1043,8 @@ class _MainScreenState extends State<MainScreen> {
                                   overflow: TextOverflow.ellipsis),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 3.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 3.0, bottom: 2),
                               child: Text("The Mythpst podcast ",
                                   style: TextStyle(
                                     fontSize: 11,
@@ -1042,8 +1060,8 @@ class _MainScreenState extends State<MainScreen> {
                       SizedBox(
                         width: 10,
                       ),
-                      Container(                      margin: EdgeInsets.only(right: 14),
-
+                      Container(
+                        margin: EdgeInsets.only(right: 14),
                         height: 200,
                         width: 150,
                         decoration: BoxDecoration(),
@@ -1064,7 +1082,8 @@ class _MainScreenState extends State<MainScreen> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 8.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 8.0, bottom: 2),
                               child: Text(
                                   "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd ",
                                   style: TextStyle(
@@ -1076,7 +1095,8 @@ class _MainScreenState extends State<MainScreen> {
                                   overflow: TextOverflow.ellipsis),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 3.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 3.0, bottom: 2),
                               child: Text("The Mythpst podcast ",
                                   style: TextStyle(
                                     fontSize: 11,
@@ -1101,15 +1121,19 @@ class _MainScreenState extends State<MainScreen> {
                 child: Row(
                   children: [
                     Container(
-                      height: 55,width: 55,margin: EdgeInsets.only(right: 10),
+                      height: 55,
+                      width: 55,
+                      margin: EdgeInsets.only(right: 10),
                       child: Image.asset(
                         "asset/image/WhatsApp Image 2021-09-24 at 4.05.44 AM.jpeg",
-
                         fit: BoxFit.fill,
                       ),
-                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(40)),clipBehavior: Clip.antiAlias,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(40)),
+                      clipBehavior: Clip.antiAlias,
                     ),
-                    Column(crossAxisAlignment: CrossAxisAlignment.start,
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           "Your top mixes",
@@ -1133,7 +1157,6 @@ class _MainScreenState extends State<MainScreen> {
               Padding(
                 padding: const EdgeInsets.only(
                   top: 16,
-
                 ),
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
@@ -1150,8 +1173,7 @@ class _MainScreenState extends State<MainScreen> {
                             Container(
                               height: 157,
                               width: 150,
-                              decoration: BoxDecoration(
-                                  ),
+                              decoration: BoxDecoration(),
                               clipBehavior: Clip.antiAlias,
                               child: Image.asset(
                                 "asset/image/WhatsApp Image 2021-09-24 at 4.05.44 AM (10).jpeg",
@@ -1161,7 +1183,8 @@ class _MainScreenState extends State<MainScreen> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 8.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 8.0, bottom: 2),
                               child: Text(
                                   "Pros and Cons of Being start new gaghs jhfahsdfb ashvfddshsd ",
                                   style: TextStyle(
@@ -1172,7 +1195,6 @@ class _MainScreenState extends State<MainScreen> {
                                   maxLines: 2,
                                   overflow: TextOverflow.ellipsis),
                             ),
-
                           ],
                         ),
                       ),
@@ -1180,7 +1202,6 @@ class _MainScreenState extends State<MainScreen> {
                         width: 10,
                       ),
                       Container(
-
                         height: 200,
                         width: 150,
                         decoration: BoxDecoration(),
@@ -1190,8 +1211,7 @@ class _MainScreenState extends State<MainScreen> {
                             Container(
                               height: 157,
                               width: 150,
-                              decoration: BoxDecoration(
-                              ),
+                              decoration: BoxDecoration(),
                               clipBehavior: Clip.antiAlias,
                               child: Image.asset(
                                 "asset/image/WhatsApp Image 2021-09-24 at 4.05.43 AM (6).jpeg",
@@ -1201,7 +1221,8 @@ class _MainScreenState extends State<MainScreen> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 8.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 8.0, bottom: 2),
                               child: Text(
                                   "Pros and Cons of Being start new gaghs jhfahsdfb ashvfddshsd ",
                                   style: TextStyle(
@@ -1212,7 +1233,6 @@ class _MainScreenState extends State<MainScreen> {
                                   maxLines: 2,
                                   overflow: TextOverflow.ellipsis),
                             ),
-
                           ],
                         ),
                       ),
@@ -1220,7 +1240,6 @@ class _MainScreenState extends State<MainScreen> {
                         width: 10,
                       ),
                       Container(
-
                         height: 200,
                         width: 150,
                         decoration: BoxDecoration(),
@@ -1230,8 +1249,7 @@ class _MainScreenState extends State<MainScreen> {
                             Container(
                               height: 157,
                               width: 150,
-                              decoration: BoxDecoration(
-                              ),
+                              decoration: BoxDecoration(),
                               clipBehavior: Clip.antiAlias,
                               child: Image.asset(
                                 "asset/image/WhatsApp Image 2021-09-24 at 4.05.44 AM.jpeg",
@@ -1241,7 +1259,8 @@ class _MainScreenState extends State<MainScreen> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 8.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 8.0, bottom: 2),
                               child: Text(
                                   "Pros and Cons of Being start new gaghs jhfahsdfb ashvfddshsd ",
                                   style: TextStyle(
@@ -1252,7 +1271,6 @@ class _MainScreenState extends State<MainScreen> {
                                   maxLines: 2,
                                   overflow: TextOverflow.ellipsis),
                             ),
-
                           ],
                         ),
                       ),
@@ -1260,7 +1278,6 @@ class _MainScreenState extends State<MainScreen> {
                         width: 10,
                       ),
                       Container(
-
                         height: 200,
                         width: 150,
                         decoration: BoxDecoration(),
@@ -1270,8 +1287,7 @@ class _MainScreenState extends State<MainScreen> {
                             Container(
                               height: 157,
                               width: 150,
-                              decoration: BoxDecoration(
-                              ),
+                              decoration: BoxDecoration(),
                               clipBehavior: Clip.antiAlias,
                               child: Image.asset(
                                 "asset/image/WhatsApp Image 2021-09-24 at 4.05.43 AM (5).jpeg",
@@ -1281,7 +1297,8 @@ class _MainScreenState extends State<MainScreen> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 8.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 8.0, bottom: 2),
                               child: Text(
                                   "Pros and Cons of Being start new gaghs jhfahsdfb ashvfddshsd ",
                                   style: TextStyle(
@@ -1292,7 +1309,6 @@ class _MainScreenState extends State<MainScreen> {
                                   maxLines: 2,
                                   overflow: TextOverflow.ellipsis),
                             ),
-
                           ],
                         ),
                       ),
@@ -1300,7 +1316,6 @@ class _MainScreenState extends State<MainScreen> {
                         width: 10,
                       ),
                       Container(
-
                         height: 200,
                         width: 150,
                         decoration: BoxDecoration(),
@@ -1310,8 +1325,7 @@ class _MainScreenState extends State<MainScreen> {
                             Container(
                               height: 157,
                               width: 150,
-                              decoration: BoxDecoration(
-                              ),
+                              decoration: BoxDecoration(),
                               clipBehavior: Clip.antiAlias,
                               child: Image.asset(
                                 "asset/image/WhatsApp Image 2021-09-24 at 4.05.44 AM (10).jpeg",
@@ -1321,7 +1335,8 @@ class _MainScreenState extends State<MainScreen> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 8.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 8.0, bottom: 2),
                               child: Text(
                                   "Pros and Cons of Being start new gaghs jhfahsdfb ashvfddshsd ",
                                   style: TextStyle(
@@ -1332,7 +1347,6 @@ class _MainScreenState extends State<MainScreen> {
                                   maxLines: 2,
                                   overflow: TextOverflow.ellipsis),
                             ),
-
                           ],
                         ),
                       ),
@@ -1340,7 +1354,7 @@ class _MainScreenState extends State<MainScreen> {
                         width: 10,
                       ),
                       Container(
-                  margin: EdgeInsets.only(right: 14),
+                        margin: EdgeInsets.only(right: 14),
                         height: 200,
                         width: 150,
                         decoration: BoxDecoration(),
@@ -1350,8 +1364,7 @@ class _MainScreenState extends State<MainScreen> {
                             Container(
                               height: 157,
                               width: 150,
-                              decoration: BoxDecoration(
-                              ),
+                              decoration: BoxDecoration(),
                               clipBehavior: Clip.antiAlias,
                               child: Image.asset(
                                 "asset/image/WhatsApp Image 2021-09-24 at 4.05.44 AM (10).jpeg",
@@ -1361,7 +1374,8 @@ class _MainScreenState extends State<MainScreen> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 8.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 8.0, bottom: 2),
                               child: Text(
                                   "Pros and Cons of Being start new gaghs jhfahsdfb ashvfddshsd ",
                                   style: TextStyle(
@@ -1372,7 +1386,6 @@ class _MainScreenState extends State<MainScreen> {
                                   maxLines: 2,
                                   overflow: TextOverflow.ellipsis),
                             ),
-
                           ],
                         ),
                       ),
@@ -1396,7 +1409,6 @@ class _MainScreenState extends State<MainScreen> {
               Padding(
                 padding: const EdgeInsets.only(
                   top: 16,
-
                 ),
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
@@ -1413,8 +1425,7 @@ class _MainScreenState extends State<MainScreen> {
                             Container(
                               width: 125,
                               height: 125,
-                              decoration: BoxDecoration(
-                                 ),
+                              decoration: BoxDecoration(),
                               clipBehavior: Clip.antiAlias,
                               child: Image.asset(
                                 "asset/image/WhatsApp Image 2021-09-24 at 4.05.44 AM (1).jpeg",
@@ -1424,7 +1435,8 @@ class _MainScreenState extends State<MainScreen> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 8.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 8.0, bottom: 2),
                               child: Text(
                                   "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd ",
                                   style: TextStyle(
@@ -1436,7 +1448,8 @@ class _MainScreenState extends State<MainScreen> {
                                   overflow: TextOverflow.ellipsis),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 3.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 3.0, bottom: 2),
                               child: Text("The Mythpst podcast ",
                                   style: TextStyle(
                                     fontSize: 11,
@@ -1453,7 +1466,6 @@ class _MainScreenState extends State<MainScreen> {
                         width: 7,
                       ),
                       Container(
-
                         height: 180,
                         width: 125,
                         decoration: BoxDecoration(),
@@ -1463,8 +1475,7 @@ class _MainScreenState extends State<MainScreen> {
                             Container(
                               width: 125,
                               height: 125,
-                              decoration: BoxDecoration(
-                              ),
+                              decoration: BoxDecoration(),
                               clipBehavior: Clip.antiAlias,
                               child: Image.asset(
                                 "asset/image/WhatsApp Image 2021-09-24 at 4.05.44 AM (1).jpeg",
@@ -1474,7 +1485,8 @@ class _MainScreenState extends State<MainScreen> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 8.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 8.0, bottom: 2),
                               child: Text(
                                   "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd ",
                                   style: TextStyle(
@@ -1486,7 +1498,8 @@ class _MainScreenState extends State<MainScreen> {
                                   overflow: TextOverflow.ellipsis),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 3.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 3.0, bottom: 2),
                               child: Text("The Mythpst podcast ",
                                   style: TextStyle(
                                     fontSize: 11,
@@ -1503,7 +1516,6 @@ class _MainScreenState extends State<MainScreen> {
                         width: 7,
                       ),
                       Container(
-
                         height: 180,
                         width: 125,
                         decoration: BoxDecoration(),
@@ -1513,8 +1525,7 @@ class _MainScreenState extends State<MainScreen> {
                             Container(
                               width: 125,
                               height: 125,
-                              decoration: BoxDecoration(
-                              ),
+                              decoration: BoxDecoration(),
                               clipBehavior: Clip.antiAlias,
                               child: Image.asset(
                                 "asset/image/WhatsApp Image 2021-09-24 at 4.05.44 AM (1).jpeg",
@@ -1524,7 +1535,8 @@ class _MainScreenState extends State<MainScreen> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 8.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 8.0, bottom: 2),
                               child: Text(
                                   "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd ",
                                   style: TextStyle(
@@ -1536,7 +1548,8 @@ class _MainScreenState extends State<MainScreen> {
                                   overflow: TextOverflow.ellipsis),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 3.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 3.0, bottom: 2),
                               child: Text("The Mythpst podcast ",
                                   style: TextStyle(
                                     fontSize: 11,
@@ -1553,7 +1566,6 @@ class _MainScreenState extends State<MainScreen> {
                         width: 7,
                       ),
                       Container(
-
                         height: 180,
                         width: 125,
                         decoration: BoxDecoration(),
@@ -1563,8 +1575,7 @@ class _MainScreenState extends State<MainScreen> {
                             Container(
                               width: 125,
                               height: 125,
-                              decoration: BoxDecoration(
-                              ),
+                              decoration: BoxDecoration(),
                               clipBehavior: Clip.antiAlias,
                               child: Image.asset(
                                 "asset/image/WhatsApp Image 2021-09-24 at 4.05.44 AM (1).jpeg",
@@ -1574,7 +1585,8 @@ class _MainScreenState extends State<MainScreen> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 8.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 8.0, bottom: 2),
                               child: Text(
                                   "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd ",
                                   style: TextStyle(
@@ -1586,7 +1598,8 @@ class _MainScreenState extends State<MainScreen> {
                                   overflow: TextOverflow.ellipsis),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 3.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 3.0, bottom: 2),
                               child: Text("The Mythpst podcast ",
                                   style: TextStyle(
                                     fontSize: 11,
@@ -1603,7 +1616,6 @@ class _MainScreenState extends State<MainScreen> {
                         width: 7,
                       ),
                       Container(
-
                         height: 180,
                         width: 125,
                         decoration: BoxDecoration(),
@@ -1613,8 +1625,7 @@ class _MainScreenState extends State<MainScreen> {
                             Container(
                               width: 125,
                               height: 125,
-                              decoration: BoxDecoration(
-                              ),
+                              decoration: BoxDecoration(),
                               clipBehavior: Clip.antiAlias,
                               child: Image.asset(
                                 "asset/image/WhatsApp Image 2021-09-24 at 4.05.44 AM (1).jpeg",
@@ -1624,7 +1635,8 @@ class _MainScreenState extends State<MainScreen> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 8.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 8.0, bottom: 2),
                               child: Text(
                                   "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd ",
                                   style: TextStyle(
@@ -1636,7 +1648,8 @@ class _MainScreenState extends State<MainScreen> {
                                   overflow: TextOverflow.ellipsis),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 3.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 3.0, bottom: 2),
                               child: Text("The Mythpst podcast ",
                                   style: TextStyle(
                                     fontSize: 11,
@@ -1653,7 +1666,6 @@ class _MainScreenState extends State<MainScreen> {
                         width: 7,
                       ),
                       Container(
-
                         height: 180,
                         width: 125,
                         decoration: BoxDecoration(),
@@ -1663,8 +1675,7 @@ class _MainScreenState extends State<MainScreen> {
                             Container(
                               width: 125,
                               height: 125,
-                              decoration: BoxDecoration(
-                              ),
+                              decoration: BoxDecoration(),
                               clipBehavior: Clip.antiAlias,
                               child: Image.asset(
                                 "asset/image/WhatsApp Image 2021-09-24 at 4.05.44 AM (1).jpeg",
@@ -1674,7 +1685,8 @@ class _MainScreenState extends State<MainScreen> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 8.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 8.0, bottom: 2),
                               child: Text(
                                   "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd ",
                                   style: TextStyle(
@@ -1686,7 +1698,8 @@ class _MainScreenState extends State<MainScreen> {
                                   overflow: TextOverflow.ellipsis),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 3.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 3.0, bottom: 2),
                               child: Text("The Mythpst podcast ",
                                   style: TextStyle(
                                     fontSize: 11,
@@ -1703,7 +1716,6 @@ class _MainScreenState extends State<MainScreen> {
                         width: 7,
                       ),
                       Container(
-
                         height: 180,
                         width: 125,
                         decoration: BoxDecoration(),
@@ -1713,8 +1725,7 @@ class _MainScreenState extends State<MainScreen> {
                             Container(
                               width: 125,
                               height: 125,
-                              decoration: BoxDecoration(
-                              ),
+                              decoration: BoxDecoration(),
                               clipBehavior: Clip.antiAlias,
                               child: Image.asset(
                                 "asset/image/WhatsApp Image 2021-09-24 at 4.05.44 AM (1).jpeg",
@@ -1724,7 +1735,8 @@ class _MainScreenState extends State<MainScreen> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 8.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 8.0, bottom: 2),
                               child: Text(
                                   "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd ",
                                   style: TextStyle(
@@ -1736,7 +1748,8 @@ class _MainScreenState extends State<MainScreen> {
                                   overflow: TextOverflow.ellipsis),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 3.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 3.0, bottom: 2),
                               child: Text("The Mythpst podcast ",
                                   style: TextStyle(
                                     fontSize: 11,
@@ -1753,7 +1766,6 @@ class _MainScreenState extends State<MainScreen> {
                         width: 7,
                       ),
                       Container(
-
                         height: 180,
                         width: 125,
                         decoration: BoxDecoration(),
@@ -1763,8 +1775,7 @@ class _MainScreenState extends State<MainScreen> {
                             Container(
                               width: 125,
                               height: 125,
-                              decoration: BoxDecoration(
-                              ),
+                              decoration: BoxDecoration(),
                               clipBehavior: Clip.antiAlias,
                               child: Image.asset(
                                 "asset/image/WhatsApp Image 2021-09-24 at 4.05.44 AM (1).jpeg",
@@ -1774,7 +1785,8 @@ class _MainScreenState extends State<MainScreen> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 8.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 8.0, bottom: 2),
                               child: Text(
                                   "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd ",
                                   style: TextStyle(
@@ -1786,7 +1798,8 @@ class _MainScreenState extends State<MainScreen> {
                                   overflow: TextOverflow.ellipsis),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 3.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 3.0, bottom: 2),
                               child: Text("The Mythpst podcast ",
                                   style: TextStyle(
                                     fontSize: 11,
@@ -1803,7 +1816,7 @@ class _MainScreenState extends State<MainScreen> {
                         width: 7,
                       ),
                       Container(
-margin: EdgeInsets.only(right: 14),
+                        margin: EdgeInsets.only(right: 14),
                         height: 180,
                         width: 125,
                         decoration: BoxDecoration(),
@@ -1813,8 +1826,7 @@ margin: EdgeInsets.only(right: 14),
                             Container(
                               width: 125,
                               height: 125,
-                              decoration: BoxDecoration(
-                              ),
+                              decoration: BoxDecoration(),
                               clipBehavior: Clip.antiAlias,
                               child: Image.asset(
                                 "asset/image/WhatsApp Image 2021-09-24 at 4.05.44 AM (1).jpeg",
@@ -1824,7 +1836,8 @@ margin: EdgeInsets.only(right: 14),
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 8.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 8.0, bottom: 2),
                               child: Text(
                                   "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd ",
                                   style: TextStyle(
@@ -1836,7 +1849,8 @@ margin: EdgeInsets.only(right: 14),
                                   overflow: TextOverflow.ellipsis),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 3.0, bottom: 2),
+                              padding:
+                                  const EdgeInsets.only(top: 3.0, bottom: 2),
                               child: Text("The Mythpst podcast ",
                                   style: TextStyle(
                                     fontSize: 11,
