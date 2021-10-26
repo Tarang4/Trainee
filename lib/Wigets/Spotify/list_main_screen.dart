@@ -10,66 +10,101 @@ class ListMainScreen extends StatefulWidget {
 }
 
 class _ListMainScreenState extends State<ListMainScreen> {
-
   List<ListModel> simpleListFrist = [
-    ListModel(title: "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd",
+    ListModel(
+        title: "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd",
         sTitle: "Pros and Cons of Being start",
-        imageUrl: "asset/image/WhatsApp Image 2021-09-24 at 4.05.44 AM (11).jpeg"),
-    ListModel(title: "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd",
+        imageUrl:
+            "asset/image/WhatsApp Image 2021-09-24 at 4.05.44 AM (11).jpeg"),
+    ListModel(
+        title: "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd",
         sTitle: "Pros and Cons of Being start",
-        imageUrl: "asset/image/WhatsApp Image 2021-09-24 at 4.05.43 AM (4).jpeg"),
-    ListModel(title: "Pros and Cons of Being start new gsgfgaghs jhfahsdfb ashvfd",
+        imageUrl:
+            "asset/image/WhatsApp Image 2021-09-24 at 4.05.43 AM (4).jpeg"),
+    ListModel(
+        title: "Pros and Cons of Being start new gsgfgaghs jhfahsdfb ashvfd",
         sTitle: "Pros and Cons of Being start",
-        imageUrl: "asset/image/WhatsApp Image 2021-09-24 at 4.05.43 AM (2).jpeg"),
-    ListModel(title: "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd",
+        imageUrl:
+            "asset/image/WhatsApp Image 2021-09-24 at 4.05.43 AM (2).jpeg"),
+    ListModel(
+        title: "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd",
         sTitle: "Pros and Cons of Being start",
-        imageUrl: "asset/image/WhatsApp Image 2021-09-24 at 4.05.44 AM (11).jpeg"),
-    ListModel(title: "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd",
+        imageUrl:
+            "asset/image/WhatsApp Image 2021-09-24 at 4.05.44 AM (11).jpeg"),
+    ListModel(
+        title: "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd",
         sTitle: "Pros and Cons of Being start",
-        imageUrl: "asset/image/WhatsApp Image 2021-09-24 at 4.05.43 AM (4).jpeg"),
-    ListModel(title: "Pros and Cons of Being start new gsgfgaghs jhfahsdfb ashvfd",
+        imageUrl:
+            "asset/image/WhatsApp Image 2021-09-24 at 4.05.43 AM (4).jpeg"),
+    ListModel(
+        title: "Pros and Cons of Being start new gsgfgaghs jhfahsdfb ashvfd",
         sTitle: "Pros and Cons of Being start",
-        imageUrl: "asset/image/WhatsApp Image 2021-09-24 at 4.05.43 AM (2).jpeg"),
+        imageUrl:
+            "asset/image/WhatsApp Image 2021-09-24 at 4.05.43 AM (2).jpeg"),
   ];
   List<ListModel> simpleListSecond = [
-    ListModel(title: "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd",
+    ListModel(
+        title: "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd",
         sTitle: "Pros and Cons of Being start",
-        imageUrl: "asset/image/WhatsApp Image 2021-09-24 at 4.05.44 AM (5).jpeg"),
-    ListModel(title: "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd",
+        imageUrl:
+            "asset/image/WhatsApp Image 2021-09-24 at 4.05.44 AM (5).jpeg"),
+    ListModel(
+        title: "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd",
         sTitle: "Pros and Cons of Being start",
-        imageUrl: "asset/image/WhatsApp Image 2021-09-24 at 4.05.43 AM (3).jpeg"),
-    ListModel(title: "Pros and Cons of Being start new gsgfgaghs jhfahsdfb ashvfd",
+        imageUrl:
+            "asset/image/WhatsApp Image 2021-09-24 at 4.05.43 AM (3).jpeg"),
+    ListModel(
+        title: "Pros and Cons of Being start new gsgfgaghs jhfahsdfb ashvfd",
         sTitle: "Pros and Cons of Being start",
-        imageUrl: "asset/image/WhatsApp Image 2021-09-24 at 4.05.43 AM (11).jpeg"),
-    ListModel(title: "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd",
+        imageUrl:
+            "asset/image/WhatsApp Image 2021-09-24 at 4.05.43 AM (11).jpeg"),
+    ListModel(
+        title: "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd",
         sTitle: "Pros and Cons of Being start",
-        imageUrl: "asset/image/WhatsApp Image 2021-09-24 at 4.05.44 AM (10).jpeg"),
-    ListModel(title: "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd",
+        imageUrl:
+            "asset/image/WhatsApp Image 2021-09-24 at 4.05.44 AM (10).jpeg"),
+    ListModel(
+        title: "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd",
         sTitle: "Pros and Cons of Being start",
-        imageUrl: "asset/image/WhatsApp Image 2021-09-24 at 4.05.43 AM (1).jpeg"),
-    ListModel(title: "Pros and Cons of Being start new gsgfgaghs jhfahsdfb ashvfd",
+        imageUrl:
+            "asset/image/WhatsApp Image 2021-09-24 at 4.05.43 AM (1).jpeg"),
+    ListModel(
+        title: "Pros and Cons of Being start new gsgfgaghs jhfahsdfb ashvfd",
         sTitle: "Pros and Cons of Being start",
-        imageUrl: "asset/image/WhatsApp Image 2021-09-24 at 4.05.43 AM (7).jpeg"),
+        imageUrl:
+            "asset/image/WhatsApp Image 2021-09-24 at 4.05.43 AM (7).jpeg"),
   ];
   List<ListModel> simpleListtherd = [
-    ListModel(title: "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd",
+    ListModel(
+        title: "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd",
         sTitle: "Pros and Cons of Being start",
-        imageUrl: "asset/image/WhatsApp Image 2021-09-24 at 4.05.44 AM (11).jpeg"),
-    ListModel(title: "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd",
+        imageUrl:
+            "asset/image/WhatsApp Image 2021-09-24 at 4.05.44 AM (11).jpeg"),
+    ListModel(
+        title: "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd",
         sTitle: "Pros and Cons of Being start",
-        imageUrl: "asset/image/WhatsApp Image 2021-09-24 at 4.05.43 AM (4).jpeg"),
-    ListModel(title: "Pros and Cons of Being start new gsgfgaghs jhfahsdfb ashvfd",
+        imageUrl:
+            "asset/image/WhatsApp Image 2021-09-24 at 4.05.43 AM (4).jpeg"),
+    ListModel(
+        title: "Pros and Cons of Being start new gsgfgaghs jhfahsdfb ashvfd",
         sTitle: "Pros and Cons of Being start",
-        imageUrl: "asset/image/WhatsApp Image 2021-09-24 at 4.05.43 AM (2).jpeg"),
-    ListModel(title: "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd",
+        imageUrl:
+            "asset/image/WhatsApp Image 2021-09-24 at 4.05.43 AM (2).jpeg"),
+    ListModel(
+        title: "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd",
         sTitle: "Pros and Cons of Being start",
-        imageUrl: "asset/image/WhatsApp Image 2021-09-24 at 4.05.44 AM (11).jpeg"),
-    ListModel(title: "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd",
+        imageUrl:
+            "asset/image/WhatsApp Image 2021-09-24 at 4.05.44 AM (11).jpeg"),
+    ListModel(
+        title: "Pros and Cons of Being start new gaghs jhfahsdfb ashvfd",
         sTitle: "Pros and Cons of Being start",
-        imageUrl: "asset/image/WhatsApp Image 2021-09-24 at 4.05.43 AM (4).jpeg"),
-    ListModel(title: "Pros and Cons of Being start new gsgfgaghs jhfahsdfb ashvfd",
+        imageUrl:
+            "asset/image/WhatsApp Image 2021-09-24 at 4.05.43 AM (4).jpeg"),
+    ListModel(
+        title: "Pros and Cons of Being start new gsgfgaghs jhfahsdfb ashvfd",
         sTitle: "Pros and Cons of Being start",
-        imageUrl: "asset/image/WhatsApp Image 2021-09-24 at 4.05.43 AM (2).jpeg"),
+        imageUrl:
+            "asset/image/WhatsApp Image 2021-09-24 at 4.05.43 AM (2).jpeg"),
   ];
 
   @override
@@ -83,10 +118,10 @@ class _ListMainScreenState extends State<ListMainScreen> {
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
                 colors: [
-                  Color(0xff3c7d91),
-                  Color(0xff000000),
-                  Color(0xff000000)
-                ])),
+              Color(0xff3c7d91),
+              Color(0xff000000),
+              Color(0xff000000)
+            ])),
         child: ListView(
           children: [
             Padding(
@@ -355,7 +390,7 @@ class _ListMainScreenState extends State<ListMainScreen> {
                       fit: BoxFit.fill,
                     ),
                     decoration:
-                    BoxDecoration(borderRadius: BorderRadius.circular(40)),
+                        BoxDecoration(borderRadius: BorderRadius.circular(40)),
                     clipBehavior: Clip.antiAlias,
                   ),
                   Column(
@@ -388,15 +423,16 @@ class _ListMainScreenState extends State<ListMainScreen> {
               child: Container(
                 height: 180,
                 width: double.infinity,
-
                 child: ListView.builder(
-                  scrollDirection:Axis.horizontal,
+                  scrollDirection: Axis.horizontal,
                   itemCount: simpleListFrist.length,
                   itemBuilder: (context, index) {
                     ListModel listMainScreen = simpleListFrist[index];
-                    return FirstList(imageUrl: listMainScreen.imageUrl,
+                    return FirstList(
+                      imageUrl: listMainScreen.imageUrl,
                       title: listMainScreen.title,
-                      stitle: listMainScreen.sTitle,);
+                      stitle: listMainScreen.sTitle,
+                    );
                   },
                 ),
               ),
@@ -417,7 +453,7 @@ class _ListMainScreenState extends State<ListMainScreen> {
                       fit: BoxFit.fill,
                     ),
                     decoration:
-                    BoxDecoration(borderRadius: BorderRadius.circular(40)),
+                        BoxDecoration(borderRadius: BorderRadius.circular(40)),
                     clipBehavior: Clip.antiAlias,
                   ),
                   Column(
@@ -450,15 +486,16 @@ class _ListMainScreenState extends State<ListMainScreen> {
               child: Container(
                 height: 180,
                 width: double.infinity,
-
                 child: ListView.builder(
-                  scrollDirection:Axis.horizontal,
+                  scrollDirection: Axis.horizontal,
                   itemCount: simpleListSecond.length,
                   itemBuilder: (context, index) {
                     ListModel listMainScreen = simpleListSecond[index];
-                    return FirstList(imageUrl: listMainScreen.imageUrl,
+                    return FirstList(
+                      imageUrl: listMainScreen.imageUrl,
                       title: listMainScreen.title,
-                      stitle: listMainScreen.sTitle,);
+                      stitle: listMainScreen.sTitle,
+                    );
                   },
                 ),
               ),
@@ -479,7 +516,7 @@ class _ListMainScreenState extends State<ListMainScreen> {
                       fit: BoxFit.fill,
                     ),
                     decoration:
-                    BoxDecoration(borderRadius: BorderRadius.circular(40)),
+                        BoxDecoration(borderRadius: BorderRadius.circular(40)),
                     clipBehavior: Clip.antiAlias,
                   ),
                   Column(
@@ -512,15 +549,16 @@ class _ListMainScreenState extends State<ListMainScreen> {
               child: Container(
                 height: 180,
                 width: double.infinity,
-
                 child: ListView.builder(
-                  scrollDirection:Axis.horizontal,
+                  scrollDirection: Axis.horizontal,
                   itemCount: simpleListtherd.length,
                   itemBuilder: (context, index) {
                     ListModel listMainScreen = simpleListtherd[index];
-                    return FirstList(imageUrl: listMainScreen.imageUrl,
+                    return FirstList(
+                      imageUrl: listMainScreen.imageUrl,
                       title: listMainScreen.title,
-                      stitle: listMainScreen.sTitle,);
+                      stitle: listMainScreen.sTitle,
+                    );
                   },
                 ),
               ),
@@ -531,16 +569,19 @@ class _ListMainScreenState extends State<ListMainScreen> {
     );
   }
 }
+
 class FirstList extends StatelessWidget {
   final imageUrl;
   final title;
   final stitle;
-  const FirstList({Key? key,this.imageUrl,this.title,this.stitle}) : super(key: key);
+
+  const FirstList({Key? key, this.imageUrl, this.title, this.stitle})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(right:7),
+      margin: EdgeInsets.only(right: 7),
       height: 180,
       width: 125,
       decoration: BoxDecoration(),
@@ -552,18 +593,16 @@ class FirstList extends StatelessWidget {
             height: 125,
             decoration: BoxDecoration(),
             clipBehavior: Clip.antiAlias,
-            child: Image.asset(imageUrl??""
-              ,
+            child: Image.asset(
+              imageUrl ?? "",
               height: 155,
               width: 150,
               fit: BoxFit.fill,
             ),
           ),
           Padding(
-            padding:
-            const EdgeInsets.only(top: 8.0, bottom: 2),
-            child: Text(
-                title??"",
+            padding: const EdgeInsets.only(top: 8.0, bottom: 2),
+            child: Text(title ?? "",
                 style: TextStyle(
                   fontSize: 11.5,
                   fontWeight: FontWeight.w600,
@@ -573,9 +612,8 @@ class FirstList extends StatelessWidget {
                 overflow: TextOverflow.ellipsis),
           ),
           Padding(
-            padding:
-            const EdgeInsets.only(top: 3.0, bottom: 2),
-            child: Text(stitle??"",
+            padding: const EdgeInsets.only(top: 3.0, bottom: 2),
+            child: Text(stitle ?? "",
                 style: TextStyle(
                   fontSize: 11,
                   fontWeight: FontWeight.w400,
@@ -589,4 +627,3 @@ class FirstList extends StatelessWidget {
     );
   }
 }
-

@@ -260,7 +260,7 @@ class _DialogButtonState extends State<DialogButton> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => HomeScreen()));
+                                      builder: (context) => LoginScreen()));
                             },
                             child: Text(
                               'Next',

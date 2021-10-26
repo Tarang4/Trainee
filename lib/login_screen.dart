@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:spotify/Wigets/Instagram/main_screen.dart';
 import 'package:spotify/Wigets/Spotify/sign_mobile.dart';
 import 'package:spotify/Wigets/Spotify/sign_up_page.dart';
-
-
-
 
 import 'widgets_prectic.dart';
 import 'Wigets/Spotify/log_in_page.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({Key? key}) : super(key: key);
 
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _LoginScreenState createState() => _LoginScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,9 +56,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 SizedBox(
                   height: 70,
                 ),
-                InkWell(onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUpFree()));
-                },
+                InkWell(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => SignUpFree()));
+                  },
                   child: Container(
                     width: double.infinity,
                     height: 51,
@@ -78,10 +78,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 InkWell(
-                  onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>SignMobile()));
-
-                },
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => SignMobile()));
+                  },
                   child: Container(
                     margin: EdgeInsets.only(top: 10),
                     width: double.infinity,
@@ -92,8 +92,11 @@ class _HomeScreenState extends State<HomeScreen> {
                             Border.all(color: Colors.white.withOpacity(0.5)),
                         borderRadius: BorderRadius.circular(25)),
                     child: Padding(
-                      padding:
-                          const EdgeInsets.only(top: 5, bottom: 5, left: 8,),
+                      padding: const EdgeInsets.only(
+                        top: 5,
+                        bottom: 5,
+                        left: 8,
+                      ),
                       child: Row(
                         children: [
                           Icon(
@@ -104,7 +107,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             width: 10,
                           ),
                           Container(
-                            width: 250,
+                              width: 250,
                               alignment: Alignment.center,
                               child: Text(
                                 'Continue with phone number',
@@ -118,10 +121,13 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                 ),
-                InkWell( onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>DialogButton()));
-
-                },
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => DialogButton()));
+                  },
                   child: Container(
                     margin: EdgeInsets.only(top: 10),
                     width: double.infinity,
@@ -132,8 +138,11 @@ class _HomeScreenState extends State<HomeScreen> {
                             Border.all(color: Colors.white.withOpacity(0.5)),
                         borderRadius: BorderRadius.circular(25)),
                     child: Padding(
-                      padding:
-                          const EdgeInsets.only(top: 5, bottom: 5, left: 12,),
+                      padding: const EdgeInsets.only(
+                        top: 5,
+                        bottom: 5,
+                        left: 12,
+                      ),
                       child: Row(
                         children: [
                           Image.asset(
@@ -145,7 +154,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             width: 10,
                           ),
                           Container(
-                            width: 250,
+                              width: 250,
                               alignment: Alignment.center,
                               child: Text(
                                 'Continue with Google',
@@ -159,9 +168,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                 ),
-                InkWell( onTap: (){
-
-                },
+                InkWell(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => HomeScreen()));
+                  },
                   child: Container(
                     margin: EdgeInsets.only(top: 10),
                     width: double.infinity,
@@ -172,8 +183,11 @@ class _HomeScreenState extends State<HomeScreen> {
                             Border.all(color: Colors.white.withOpacity(0.5)),
                         borderRadius: BorderRadius.circular(25)),
                     child: Padding(
-                      padding:
-                          const EdgeInsets.only(top: 5, bottom: 5, left: 12,),
+                      padding: const EdgeInsets.only(
+                        top: 5,
+                        bottom: 5,
+                        left: 12,
+                      ),
                       child: Row(
                         children: [
                           Image.asset(
@@ -185,10 +199,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             width: 10,
                           ),
                           Container(
-                            width: 250,
+                              width: 250,
                               alignment: Alignment.center,
                               child: Text(
-                                'Continue with Facebook',
+                                'Continue with Instagram',
                                 style: TextStyle(
                                     fontSize: 16,
                                     color: Colors.white,
@@ -199,19 +213,19 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                 ),
-              TextButton(
-                onPressed: () {
-                   Navigator.push(context, MaterialPageRoute(builder: (context)=>LogInPage()));
-
-                },
-                child: Text(
-                  'Log in',
-                  style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold),
+                TextButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => LogInPage()));
+                  },
+                  child: Text(
+                    'Log in',
+                    style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold),
+                  ),
                 ),
-              ),
               ],
             ),
           ),
