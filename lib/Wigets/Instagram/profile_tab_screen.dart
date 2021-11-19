@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:spotify/Wigets/Instagram/Profile_tab_screen/follow_tab_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -102,19 +103,24 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                   ],
                 ),
-                Column(
-                  children: [
-                    Text(
-                      "576",
-                      style:
-                          TextStyle(fontSize: 21, fontWeight: FontWeight.bold),
-                    ),
-                    Text(
-                      "Followers",
-                      style:
-                          TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
-                    ),
-                  ],
+                InkWell(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>FollowScreen()));
+                  },
+                  child: Column(
+                    children: [
+                      Text(
+                        "576",
+                        style:
+                            TextStyle(fontSize: 21, fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        "Followers",
+                        style:
+                            TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
+                      ),
+                    ],
+                  ),
                 ),
                 Column(
                   children: [
