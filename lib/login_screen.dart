@@ -3,7 +3,7 @@ import 'package:spotify/Wigets/Instagram/main_screen.dart';
 import 'package:spotify/Wigets/Spotify/sign_mobile.dart';
 import 'package:spotify/Wigets/Spotify/sign_up_page.dart';
 
-import 'widgets_prectic.dart';
+import 'dialogbox_demo.dart';
 import 'Wigets/Spotify/log_in_page.dart';
 
 class LoginScreen extends StatefulWidget {

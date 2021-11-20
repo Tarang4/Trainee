@@ -2,16 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:spotify/Wigets/Instagram/modal_post.dart';
 
 class FollowScreen extends StatefulWidget {
-  const FollowScreen({Key? key}) : super(key: key);
+  final int? index;
 
+  const FollowScreen( {Key? key, this.index}) : super(key: key);
   @override
   _FollowScreenState createState() => _FollowScreenState();
 }
 
 class _FollowScreenState extends State<FollowScreen> {
-  bool isFollowers = true;
-  bool isFollowing = false;
-
+  int index=0;
+@override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    index = widget.index??0;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -48,14 +53,14 @@ class _FollowScreenState extends State<FollowScreen> {
               children: [
                 InkWell(
                   onTap: () {
-                    followerClick(followers: true, following: false);
+                    followerClick(0);
                   },
                   child: Container(
                       height: 45,
                       width: MediaQuery.of(context).size.width / 2,
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
-                          border: isFollowers
+                          border: index==0
                               ? Border(
                                   bottom: BorderSide(
                                   width: 1.5,
@@ -68,7 +73,7 @@ class _FollowScreenState extends State<FollowScreen> {
                                 ))),
                       child: Text(
                         "351 Followers",
-                        style: isFollowers
+                        style: index==0
                             ? TextStyle(
                                 fontSize: 17, fontWeight: FontWeight.bold)
                             : TextStyle(
@@ -79,14 +84,14 @@ class _FollowScreenState extends State<FollowScreen> {
                 ),
                 InkWell(
                   onTap: () {
-                    followerClick(followers: false, following: true);
+                    followerClick(1);
                   },
                   child: Container(
                       height: 45,
                       width: MediaQuery.of(context).size.width / 2,
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
-                        border: isFollowing
+                        border: index==1
                             ? Border(
                                 bottom: BorderSide(
                                 width: 1.5,
@@ -100,7 +105,7 @@ class _FollowScreenState extends State<FollowScreen> {
                       ),
                       child: Text(
                         "321 Following",
-                        style: isFollowing
+                        style: index==1
                             ? TextStyle(
                                 fontSize: 17, fontWeight: FontWeight.bold)
                             : TextStyle(
@@ -119,17 +124,16 @@ class _FollowScreenState extends State<FollowScreen> {
               color: Colors.black.withOpacity(0.3),
               width: double.infinity,
             ),
-            isFollowers?Follower() : Following(),
+            index==0?Follower() : Following(),
           ],
         ),
       ),
     );
   }
 
-  followerClick({bool followers = true, bool following = false}) {
+  followerClick(value) {
     setState(() {
-      isFollowers = followers;
-      isFollowing = following;
+     index=value;
     });
   }
 }
