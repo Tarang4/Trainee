@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:spotify/Wigets/Instagram/main_screen.dart';
 import 'package:spotify/Wigets/Spotify/sign_mobile.dart';
 import 'package:spotify/Wigets/Spotify/sign_up_page.dart';
+import 'package:spotify/phone_no_screen.dart';
 
 import 'dialogbox_demo.dart';
 import 'Wigets/Spotify/log_in_page.dart';
@@ -80,7 +81,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 InkWell(
                   onTap: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => SignMobile()));
+                        MaterialPageRoute(builder: (context) => ValidationTextField()));
                   },
                   child: Container(
                     margin: EdgeInsets.only(top: 10),
