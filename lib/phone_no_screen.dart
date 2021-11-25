@@ -1,8 +1,10 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:email_validator/email_validator.dart';
 import 'package:form_validator/form_validator.dart';
-
+import 'package:flutter_pw_validator/flutter_pw_validator.dart';
+import 'package:spotify/Prectis/absord_click.dart';
 import 'Wigets/Spotify/sign_mobile.dart';
 
 class ValidationTextField extends StatefulWidget {
@@ -13,16 +15,16 @@ class ValidationTextField extends StatefulWidget {
 }
 
 class _ValidationTextFieldState extends State<ValidationTextField> {
-  final validate = ValidationBuilder().minLength(10).maxLength(50).build();
-
-
+  // final validate = ValidationBuilder().minLength(10).maxLength(50).build();
 
   bool isObscure = true;
   final btKey = GlobalKey<FormState>();
   TextEditingController userName = TextEditingController();
-  TextEditingController userPass = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
   TextEditingController userEmail = TextEditingController();
   TextEditingController userPhoneNo = TextEditingController();
+
+  late String _usernameError;
 
   @override
   Widget build(BuildContext context) {
@@ -46,8 +48,17 @@ class _ValidationTextFieldState extends State<ValidationTextField> {
                     height: 4,
                   ),
                   TextFormField(
-                    validator: ValidationBuilder().email().build(),
+                    // 1
+                    validator: (value) {
+                      if (!EmailValidator.validate(value ?? "")) {
+                        return 'enter your email';
+                      }
+                    },
 
+                    // 2
+                    // validator: ValidationBuilder().email().build(),
+
+                    // 3
                     // validator: (value) {
                     //   if (value == null || value.isEmpty) {
                     //     return "enter your email";
@@ -90,8 +101,14 @@ class _ValidationTextFieldState extends State<ValidationTextField> {
                     height: 4,
                   ),
                   TextFormField(
-                    
-
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'enter phone no.';
+                      }
+                      if (value.length < 10) {
+                        return 'enter curect no.';
+                      }
+                    },
                     controller: userPhoneNo,
                     textInputAction: TextInputAction.done,
                     keyboardType: TextInputType.phone,
@@ -155,7 +172,7 @@ class _ValidationTextFieldState extends State<ValidationTextField> {
                     height: 4,
                   ),
                   TextFormField(
-                    controller: userPass,
+                    controller: _passwordController,
                     obscureText: isObscure,
                     textInputAction: TextInputAction.done,
                     cursorColor: Colors.black,
@@ -182,19 +199,46 @@ class _ValidationTextFieldState extends State<ValidationTextField> {
                       ),
                     ),
                   ),
+
+                  SizedBox(
+                    height: 5,
+                  ),
+
+                  // FlutterPwValidator(
+                  //   width: 400,
+                  //   height: 100,
+                  //   defaultColor: Colors.black,
+                  //   uppercaseCharCount: 1,
+                  //   numericCharCount: 1,
+                  //   specialCharCount: 1,
+                  //   minLength: 8,
+                  //   onSuccess: () {
+                  //     Scaffold.of(context).showSnackBar(new SnackBar(
+                  //         content: new Text("Password is matched")));
+                  //   },
+                  //   controller: _passwordController,
+                  // ),
                   SizedBox(
                     height: 24,
                   ),
                   ElevatedButton(
-                      onPressed: () {
-                        if (btKey.currentState!.validate()) {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => SignMobile()));
-                        }
-                      },
-                      child: Text("Next"))
+                    onPressed: () {
+                      if (btKey.currentState!.validate()) {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => SignMobile()));
+                      }
+                    },
+                      child: Text("Next")),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => AbsordClick()));
+                    },
+                      child: Text("Next")),
                 ],
               ),
             ),
@@ -203,4 +247,7 @@ class _ValidationTextFieldState extends State<ValidationTextField> {
       ),
     );
   }
+
+  // using password
+
 }
