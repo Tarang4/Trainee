@@ -1,20 +1,21 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:spotify/Wigets/drawerDemo.dart';
+import 'package:spotify/Wigets/stack_demo.dart';
 
 import 'Disign/list_view_design.dart';
 import 'Wigets/Stack widget/stack_1.dart';
+import 'Wigets/dropdown_btn.dart';
 import 'Wigets/list_view_demo.dart';
 import 'login_screen.dart';
 
-class DialogButton extends StatefulWidget {
-  const DialogButton({Key? key}) : super(key: key);
+class WidgetTutorial extends StatefulWidget {
+  const WidgetTutorial.widget_tutorial({Key? key}) : super(key: key);
 
   @override
-  _DialogButtonState createState() => _DialogButtonState();
+  _WidgetTutorialState createState() => _WidgetTutorialState();
 }
 
-class _DialogButtonState extends State<DialogButton> {
+class _WidgetTutorialState extends State<WidgetTutorial> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -169,6 +170,30 @@ class _DialogButtonState extends State<DialogButton> {
                               builder: (context) => ListViewDesign())),
                       child: Text(
                         'list view  design',
+                        style: TextStyle(fontSize: 26, color: Colors.black),
+                      )),
+                ],
+              ),
+              SizedBox(height: 20,),
+              Text(
+                'DropDown Button widget Demo ',
+                style: TextStyle(fontSize: 16, color: Colors.black),
+              ),
+              Container(
+                height: 2,
+                width: double.infinity,
+                color: Colors.black.withOpacity(0.7),
+              ),
+
+              Column(
+                children: [
+                  TextButton(
+                      onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => DropDownBtn())),
+                      child: Text(
+                        'DropDown Button Design',
                         style: TextStyle(fontSize: 26, color: Colors.black),
                       )),
                 ],

@@ -4,7 +4,7 @@ import 'package:spotify/Wigets/Spotify/sign_mobile.dart';
 import 'package:spotify/Wigets/Spotify/sign_up_page.dart';
 import 'package:spotify/phone_no_screen.dart';
 
-import 'dialogbox_demo.dart';
+import 'widget_titorial.dart';
 import 'Wigets/Spotify/log_in_page.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -31,14 +31,14 @@ class _LoginScreenState extends State<LoginScreen> {
             padding: const EdgeInsets.only(top: 138.0, left: 30, right: 30),
             child: Column(
               children: [
-                Image.asset(
-                  "asset/image/spotify-128.png",
-                  width: 70,
-                  height: 70,
+                Expanded(
+                  child: Image.asset(
+                    "asset/image/spotify-128.png",
+                    width: 70,
+                    height: 70,
+                  ),
                 ),
-                SizedBox(
-                  height: 100,
-                ),
+
                 Text(
                   'Millions of Songs.',
                   style: TextStyle(
@@ -127,7 +127,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => DialogButton()));
+                            builder: (context) => WidgetTutorial.widget_tutorial()));
                   },
                   child: Container(
                     margin: EdgeInsets.only(top: 10),
@@ -227,6 +227,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         fontWeight: FontWeight.bold),
                   ),
                 ),
+                SizedBox(
+                  height: 40,
+                )
               ],
             ),
           ),
